@@ -70,7 +70,7 @@ TAC supports a simplified "ConversationRelay-only" mode for getting started with
 uv add twilio-agent-connect
 
 # With server support (includes FastAPI and uvicorn for TACFastAPIServer)
-uv add twilio-agent-connect --extra server
+uv add "twilio-agent-connect[server]"
 
 # Using pip
 pip install twilio-agent-connect
@@ -437,12 +437,10 @@ const systemPrompt = SYSTEM_INSTRUCTIONS + `\n\n${memoryContext}`;
 
 ## Setup Wizard
 
-TAC provides tools to automatically create required Twilio services (Memory Store, Conversation Configuration, `.env` file):
+There are two ways to create the required Twilio services (Memory Store, Conversation Configuration, `.env` file):
 
-- **Twilio Console**: Create resources manually at [console.twilio.com](https://console.twilio.com)
-- **Quickstart Guide**: Full walkthrough at https://www.twilio.com/docs/conversations/agent-connect/quickstart
-
-For a local setup wizard (opens http://localhost:8080):
+- **Manual**: Create resources in the [Twilio Console](https://console.twilio.com), following the [Quickstart Guide](https://www.twilio.com/docs/conversations/agent-connect/quickstart)
+- **Automated**: Run the local setup wizard (opens http://localhost:8080):
 
 ```bash
 git clone https://github.com/twilio/twilio-agent-connect-python.git
